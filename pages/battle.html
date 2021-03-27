@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Battle Time</title>
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>BATTLE TIME!</h1>
+  </header>
+
+  <main class="main_grid">
+    <article class="player_side">
+
+      <div class="player_stats">
+        <div id="player_name"></div>
+        <div id="player_health">
+          <span id="plyr_current_health"></span>
+          <span id="plyr_max_health"></span>
+        </div>
+        <div id="player_image"></div>
+      </div>
+    </article>
+    <article class="cpu_side">
+
+      <div class="cpu_stats">
+        <div id="cpu_name"></div>
+        <div id="cpu_health">
+          <span id="cpu_current_health"></span>
+          <span id="cpu_max_health"></span>
+        </div>
+        <div id="cpu_image"></div>
+      </div>
+    </article>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <script src='/js/functions.js'></script>
+  <script type='module' src='/js/battle.js'></script>
+
+</body>
+
+</html>

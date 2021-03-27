@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #98909b;
+  text-align: center;
+}
+
+// main {
+//   display: grid;
+
+//   place-items: center;
+// }
+
+#pokemon_options {
+  display: grid;
+  grid-auto-flow: column;
+  place-items: center;
+  height: 70vh;
+
+
+  .pokemon {
+    display: grid;
+    place-items: center;
+    row-gap: 10px;
+    position: relative;
+    z-index: 9999;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .pokemon_image {
+      height: 150px;
+      pointer-events: none;
+    }
+
+    h3 {
+      align-self: end;
+      pointer-events: none;
+    }
+  }
+}
+
+#player_image {
+  img {
+    width: 170px;
+    transform: scaleX(-1);
+  }
+}
+
+.player_stats {
+  display: grid;
+  width: 300px;
+  text-align: center;
+}
+
+#player_health {
+  position: relative;
+  width: 100%;
+  border: 1px solid black;
+  height: 20px;
+}
+
+#plyr_current_health {
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
