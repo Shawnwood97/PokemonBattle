@@ -10,6 +10,22 @@ body {
   text-align: center;
 }
 
+#battle_BG {
+  background: url("/images/battle.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.main_grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(40%, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+  place-items: center;
+  height: 80vh;
+}
+
 #pokemon_options {
   display: -ms-grid;
   display: grid;
@@ -44,30 +60,66 @@ body {
 }
 
 #player_image img {
-  width: 170px;
+  height: 270px;
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
 }
 
-.player_stats {
+#cpu_image img {
+  height: 270px;
+}
+
+.player_stats,
+.cpu_stats {
   display: -ms-grid;
   display: grid;
   width: 300px;
   text-align: center;
 }
 
-#player_health {
+#player_health,
+#cpu_health {
   position: relative;
   width: 100%;
   border: 1px solid black;
   height: 20px;
 }
 
-#plyr_current_health {
+#plyr_current_health,
+#cpu_current_health {
   width: 100%;
   position: absolute;
   height: 100%;
   top: 0;
   left: 0;
+}
+
+.attacks_messages {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-flow: column;
+  margin: 10px;
+}
+
+#attack_container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.attacks {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  height: 50px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.attacks:hover {
+  cursor: pointer;
+  background: #98909b;
 }
 /*# sourceMappingURL=style.css.map */

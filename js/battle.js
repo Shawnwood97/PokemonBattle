@@ -45,11 +45,12 @@ playerChosenPokemonName.innerHTML = `${currentPokemon.name}`;
 playerChosenPokemon.innerHTML = `<img src='${currentPokemon.image}'>`;
 playerChosenPokemonCHealth.innerHTML = `${currentPokemon.cur_health}`;
 
-playerCurrentHealth(currentPokemon.cur_health, currentPokemon.max_health);
-//
+playerHealthBar(currentPokemon.cur_health, currentPokemon.max_health);
 
 var cpuCurrentPokemon = cpuPokemonList[cpuSelection.toLowerCase()];
 
 cpuChosenPokemonName.innerHTML = `${cpuCurrentPokemon.name}`;
 cpuChosenPokemon.innerHTML = `<img src='${cpuCurrentPokemon.image}'>`;
 cpuChosenPokemonCHealth.innerHTML = `${cpuCurrentPokemon.cur_health}`;
+
+cpuHealthBar(cpuCurrentPokemon.cur_health, cpuCurrentPokemon.max_health);

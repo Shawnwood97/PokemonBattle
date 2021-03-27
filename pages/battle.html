@@ -10,34 +10,48 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
+<body id="battle_BG">
 
   <header>
     <h1>BATTLE TIME!</h1>
   </header>
 
-  <main class="main_grid">
-    <article class="player_side">
+  <main>
+    <section class="main_grid">
+      <article class="player_side">
 
-      <div class="player_stats">
-        <div id="player_name"></div>
-        <div id="player_health">
-          <span id="plyr_current_health"></span>
-          <span id="plyr_max_health"></span>
+        <div class="player_stats">
+          <div id="player_name"></div>
+          <div id="player_health">
+            <span id="plyr_current_health"></span>
+            <span id="plyr_max_health"></span>
+          </div>
+          <div id="player_image"></div>
         </div>
-        <div id="player_image"></div>
-      </div>
-    </article>
-    <article class="cpu_side">
 
-      <div class="cpu_stats">
-        <div id="cpu_name"></div>
-        <div id="cpu_health">
-          <span id="cpu_current_health"></span>
-          <span id="cpu_max_health"></span>
+      </article>
+
+      <article class="cpu_side">
+
+        <div class="cpu_stats">
+          <div id="cpu_name"></div>
+          <div id="cpu_health">
+            <span id="cpu_current_health"></span>
+            <span id="cpu_max_health"></span>
+          </div>
+          <div id="cpu_image"></div>
         </div>
-        <div id="cpu_image"></div>
+      </article>
+    </section>
+
+    <article class="attacks_messages">
+      <div id="attack_container">
+        <div id="attack_one" class="attacks">Attack 1</div>
+        <div id="attack_two" class="attacks">Attack 2</div>
+        <div id="attack_three" class="attacks">Attack 3</div>
+        <div id="attack_four" class="attacks">Attack 4</div>
       </div>
+      <div id="mesages_container">These are my messages</div>
     </article>
   </main>
 

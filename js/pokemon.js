@@ -6,23 +6,23 @@ var pokemonList = {
     max_health: 1000,
     strength: "grass",
     weakness: "water",
-    abilities: [
-      {
+    abilities: {
+      ability1: {
         name: "Ember",
         type: "fire",
         damage: 100,
       },
-      {
+      ability2: {
         name: "Smokey",
         type: "fire",
         damage: 300,
       },
-      {
+      ability3: {
         name: "Flamethrower",
         type: "fire",
         damage: 500,
       },
-    ],
+    },
   },
   squirtle: {
     name: "Squirtle",
@@ -80,7 +80,7 @@ var cpuPokemonList = {
   charmander: {
     name: "Charmander",
     image: "/images/charmander.gif",
-    cur_health: 500,
+    cur_health: 200,
     max_health: 1000,
     strength: "grass",
     weakness: "water",
@@ -105,7 +105,7 @@ var cpuPokemonList = {
   squirtle: {
     name: "Squirtle",
     image: "/images/squirtle.gif",
-    cur_health: 800,
+    cur_health: 600,
     max_health: 1100,
     strength: "fire",
     weakness: "grass",
@@ -130,7 +130,7 @@ var cpuPokemonList = {
   bulbasaur: {
     name: "Bulbasaur",
     image: "/images/bulbasaur.gif",
-    cur_health: 1200,
+    cur_health: 1000,
     max_health: 1200,
     strength: "water",
     weakness: "fire",

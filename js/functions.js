@@ -4,16 +4,16 @@ function createPlayerCookie(pokemonName, cpuPokemonName) {
   window.open("/pages/battle.html", "_self");
 }
 
-function playerCurrentHealth(cHealth, mHealth) {
+function playerHealthBar(cHealth, mHealth) {
   var curHealthValue = (cHealth / mHealth) * 100;
   var curHealthBar = document.getElementById("plyr_current_health");
   curHealthBar.style.width = `${curHealthValue}%`;
   curHealthBar.style.background = "green";
 }
 
-// function cpuCurrentHealth(cHealth, mHealth) {
-//   var curHealthValue = (cHealth / mHealth) * 100;
-//   var curHealthBar = document.getElementById("plyr_current_health");
-//   curHealthBar.style.width = `${curHealthValue}%`;
-//   curHealthBar.style.background = "green";
-// }
+function cpuHealthBar(cHealth, mHealth) {
+  var curHealthValue = (cHealth / mHealth) * 100;
+  var curHealthBar = document.getElementById("cpu_current_health");
+  curHealthBar.style.width = `${curHealthValue}%`;
+  curHealthBar.style.background = "green";
+}
