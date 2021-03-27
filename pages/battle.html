@@ -46,9 +46,9 @@
 
     <article class="attacks_messages">
       <div id="attack_container">
-        <div id="attack_one" class="attacks">Attack 1</div>
-        <div id="attack_two" class="attacks">Attack 2</div>
-        <div id="attack_three" class="attacks">Attack 3</div>
+        <div id="attack_one" class="attacks" onclick="playerAttack('ability1')">Attack 1</div>
+        <div id="attack_two" class="attacks" onclick="playerAttack('ability2')">Attack 2</div>
+        <div id="attack_three" class="attacks" onclick="playerAttack('ability3')">Attack 3</div>
         <div id="attack_four" class="attacks">Attack 4</div>
       </div>
       <div id="mesages_container">These are my messages</div>
@@ -56,8 +56,9 @@
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <script src='/js/pokemon.js'></script>
   <script src='/js/functions.js'></script>
-  <script type='module' src='/js/battle.js'></script>
+  <script src='/js/battle.js'></script>
 
 </body>
 

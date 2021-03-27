@@ -1,5 +1,3 @@
-import { pokemonList, cpuPokemonList } from "/js/pokemon.js";
-
 // declares a variable for the main section to create all our html in.
 var pokemonOptions = document.getElementById("pokemon_options");
 

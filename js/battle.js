@@ -1,9 +1,8 @@
-import { pokemonList, cpuPokemonList } from "/js/pokemon.js";
-
 // console.log(cpuSelection);
 // Player
 var playerSelection = Cookies.get("chosenPokemon");
 var cpuSelection = Cookies.get("cpuChosenPokemon");
+var cpuHealth = Cookies.get("cpuCurrentHealth");
 console.log(cpuSelection);
 // console.log(cpuSelection);
 
@@ -18,29 +17,10 @@ var cpuChosenPokemonName = document.getElementById("cpu_name");
 // var cpuChosenPokemonMHealth = document.getElementById("cpu_max_health");
 var cpuChosenPokemonCHealth = document.getElementById("cpu_current_health");
 
-// var cpuCurrentPokemon;
-// for (var i = 0; i < cpuPokemonList.length; i++) {
-//   if (cpuSelection === cpuPokemonList[i].name) {
-//     cpuCurrentPokemon = cpuPokemonList[i];
-
-//     cpuChosenPokemonName.innerHTML = `${cpuCurrentPokemon.name}`;
-//     cpuChosenPokemon.innerHTML = `<img src='${cpuCurrentPokemon.image}'>`;
-//     cpuChosenPokemonCHealth.innerHTML = `${cpuCurrentPokemon.cur_health}`;
-//   }
-// }
-
-// var currentPokemon;
-// for (var i = 0; i < pokemonList.length; i++) {
-//   if (playerSelection === pokemonList[i].name) {
-//     currentPokemon = pokemonList[i];
-//     playerChosenPokemonName.innerHTML = `${currentPokemon.name}`;
-//     playerChosenPokemon.innerHTML = `<img src='${currentPokemon.image}'>`;
-//     playerChosenPokemonCHealth.innerHTML = `${currentPokemon.cur_health}`;
-//     // playerChosenPokemonMHealth.innerHTML = `${pokemonList[i].max_health}`;
-//   }
-// }
-
 var currentPokemon = pokemonList[playerSelection.toLowerCase()];
+
+console.log(currentPokemon.abilities.ability1.damage);
+
 playerChosenPokemonName.innerHTML = `${currentPokemon.name}`;
 playerChosenPokemon.innerHTML = `<img src='${currentPokemon.image}'>`;
 playerChosenPokemonCHealth.innerHTML = `${currentPokemon.cur_health}`;
@@ -51,6 +31,6 @@ var cpuCurrentPokemon = cpuPokemonList[cpuSelection.toLowerCase()];
 
 cpuChosenPokemonName.innerHTML = `${cpuCurrentPokemon.name}`;
 cpuChosenPokemon.innerHTML = `<img src='${cpuCurrentPokemon.image}'>`;
-cpuChosenPokemonCHealth.innerHTML = `${cpuCurrentPokemon.cur_health}`;
+cpuChosenPokemonCHealth.innerHTML = `${cpuHealth}`;
 
-cpuHealthBar(cpuCurrentPokemon.cur_health, cpuCurrentPokemon.max_health);
+// cpuHealthBar(cpuCurrentPokemon.cur_health, cpuCurrentPokemon.max_health);
