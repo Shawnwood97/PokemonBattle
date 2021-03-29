@@ -19,6 +19,8 @@ var cpuChosenPokemonCHealth = document.getElementById("cpu_current_health");
 
 var currentPokemon = pokemonList[playerSelection.toLowerCase()];
 
+var gameOver = false;
+
 console.log(currentPokemon.abilities.ability1.damage);
 
 playerChosenPokemonName.innerHTML = `${currentPokemon.name}`;
@@ -33,4 +35,4 @@ cpuChosenPokemonName.innerHTML = `${cpuCurrentPokemon.name}`;
 cpuChosenPokemon.innerHTML = `<img src='${cpuCurrentPokemon.image}'>`;
 cpuChosenPokemonCHealth.innerHTML = `${cpuHealth}`;
 
-// cpuHealthBar(cpuCurrentPokemon.cur_health, cpuCurrentPokemon.max_health);
+cpuHealthBar(cpuCurrentPokemon.cur_health, cpuCurrentPokemon.max_health);

@@ -35,17 +35,39 @@ function cpuHealthBar(cHealth, mHealth) {
   curHealthBar.style.background = "green";
 }
 
-function playerAttack(ability) {
-  var currentPokemon = getPokemonObject();
+function cpuAttack() {
+  var cpuAbilityChoice;
   var cpuPokemon = getCpuPokemonObject();
-
-  var chosenAbility = currentPokemon.abilities[ability];
-  var cpuHealth = Cookies.get("cpuCurrentHealth");
-  if (cpuHealth > chosenAbility.damage) {
-    cpuHealth -= chosenAbility.damage;
-  } else {
-    cpuHealth = 0;
+  cpuChoice = Object.keys(cpuPokemon.abilities).length;
+  for (var ability in cpuPokemon.abilities) {
+    if (Math.random() < 1 / cpuChoice) {
+      cpuAbilityChoice = cpuPokemon.abilities[ability].name;
+      break;
+    }
   }
-  cpuHealthBar(cpuHealth, cpuPokemon.max_health);
-  Cookies.set("cpuCurrentHealth", cpuHealth);
+  if (cpuAbilityChoice === undefined) {
+    cpuAbilityChoice = cpuPokemon.abilities[ability].name;
+  }
+  console.log(cpuAbilityChoice);
+}
+
+function playerAttack(ability) {
+  if (!gameOver) {
+    var currentPokemon = getPokemonObject();
+    var cpuPokemon = getCpuPokemonObject();
+    var message = document.getElementById("messages_container");
+    var chosenAbility = currentPokemon.abilities[ability];
+    var cpuHealth = Cookies.get("cpuCurrentHealth");
+    if (cpuHealth > chosenAbility.damage) {
+      cpuHealth -= chosenAbility.damage;
+      message.innerText = `${currentPokemon.name}'s ${chosenAbility.name} did ${chosenAbility.damage} damage to ${cpuPokemon.name}`;
+    } else if (cpuHealth <= chosenAbility.damage) {
+      cpuHealth = 0;
+      gameOver = true;
+      message.innerText = `${currentPokemon.name}'s ${chosenAbility.name} did ${chosenAbility.damage} damage to ${cpuPokemon.name}. \n ${cpuPokemon.name} has fainted`;
+    }
+
+    cpuHealthBar(cpuHealth, cpuPokemon.max_health);
+    Cookies.set("cpuCurrentHealth", cpuHealth);
+  }
 }

@@ -8,12 +8,11 @@ var cpuPokemonSelection;
 // for loop that creates and  appends all of the HTML, in a kinda Dry way.
 var numberCpu = Object.keys(cpuPokemonList).length;
 for (var pokemon in cpuPokemonList) {
-  // var coinFlip = Math.random();
-  // console.log(coinFlip);
   if (Math.random() < 1 / numberCpu) {
     cpuPokemonSelection = cpuPokemonList[pokemon].name;
     break;
   }
+  console.log(Math.random());
 }
 
 // dafault to last pokemon if noone wins game in if statment.
