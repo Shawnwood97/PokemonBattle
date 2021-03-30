@@ -73,10 +73,13 @@ function cpuAttack() {
     // update action section for attack.
     message.innerText = `Enemy ${cpuPokemon.name}'s ${cpuAbilityChoice.name} did ${cpuAbilityChoice.damage} damage to ${currentPokemon.name}`;
     // if player health is instead less than or = to upcoming ability damage, set player health variable to 0.
+    Cookies.set("plyrCurrentHealth", playerHealth);
   } else if (playerHealth <= cpuAbilityChoice.damage) {
     playerHealth = 0;
 
-    gameOver = Cookies.set("gameOver", "Player Wins!");
+    Cookies.set("gameOver", "Player Wins!");
+    gameOver = true;
+    clearCookie();
     playerPokemonHealth.innerHTML = `${playerHealth}`;
     // this stops the game as gameOver = false, needs to be true to run.
 
@@ -86,7 +89,6 @@ function cpuAttack() {
   // update player health bar.
   playerHealthBar(playerHealth, currentPokemon.max_health);
   // update cookie.
-  Cookies.set("plyrCurrentHealth", playerHealth);
 }
 
 // This is the logic for the Player attack.
@@ -109,7 +111,9 @@ function playerAttack(playerAbility) {
   } else if (cpuHealth <= chosenAbility.damage && gameOver === false) {
     cpuHealth = 0;
     cpuPokemonHealth.innerHTML = `${cpuHealth}`;
-    gameOver = Cookies.set("gameOver", "Player Wins!");
+    Cookies.set("gameOver", "Player Wins!");
+    gameOver = true;
+    clearCookie();
     message.innerText = `${currentPokemon.name}'s ${chosenAbility.name} did ${chosenAbility.damage} damage to ${cpuPokemon.name}. \n ${cpuPokemon.name} has fainted`;
   }
   cpuHealthBar(cpuHealth, cpuPokemon.max_health);
@@ -123,11 +127,14 @@ function playerAttack(playerAbility) {
 
 // Clear Cookies if game is over
 function clearCookie() {
-  if (gameOver === true) {
-    Cookies.remove("plyrCurrentHealth");
-    Cookies.remove("cpuCurrentHealth");
-  }
-  // redirect();
+  Cookies.remove("plyrCurrentHealth");
+  Cookies.remove("cpuCurrentHealth");
+
+  var popupDisplay = document.getElementById("pop_up");
+  popupDisplay.style.display = "grid";
+  setTimeout(function () {
+    window.open("/index.html", "_self");
+  }, 6000);
 }
 
 // Function to start a game. setTimeout to 4 seconds so that there's a delay between the Player, and cpu attacks, this alsodelays the message that
