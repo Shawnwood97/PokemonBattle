@@ -5,18 +5,22 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
   <title></title>
 
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body id="battle_BG">
+<body id="battle_Bg">
 
   <header>
-    <h1>BATTLE TIME!</h1>
+    <img class="logo" src="/images/logo.png" alt="Pokemon Battle Arena Logo">
   </header>
-
   <main>
+
+
+
     <section class="main_grid">
       <article class="player_side">
 
@@ -46,13 +50,19 @@
 
     <article class="attacks_messages">
       <div id="attack_container">
-        <div id="attack_one" class="attacks" onclick="playGame('ability1')">Attack 1</div>
-        <div id="attack_two" class="attacks" onclick="playGame('ability2')">Attack 2</div>
-        <div id="attack_three" class="attacks" onclick="playGame('ability3')">Attack 3</div>
-        <div id="attack_four" class="attacks">Attack 4</div>
+        <div id="attack_one" class="attacks" onclick="playGame('ability1')">Ability 1</div>
+        <div id="attack_two" class="attacks" onclick="playGame('ability2')">Ability 2</div>
+        <div id="attack_three" class="attacks" onclick="playGame('ability3')">Ability 3</div>
+        <!-- <div id="attack_four" class="attacks"></div> -->
       </div>
       <div id="messages_container"></div>
     </article>
+    <div id="pop_up">
+      <div id="text_container">
+        <p id="game_text"></p>
+        <p class="redirect_text"></p>
+      </div>
+    </div>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>

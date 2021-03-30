@@ -38,6 +38,18 @@ cpuPokemonHealth.innerHTML = `${cpuHealth}`;
 playerHealthBar(playerHealth, currentPokemon.max_health);
 cpuHealthBar(cpuHealth, cpuCurrentPokemon.max_health);
 
+if (
+  playerSelection === undefined ||
+  playerHealth === undefined ||
+  cpuHealth === undefined
+) {
+  var popupDisplay = document.getElementById("pop_up");
+  popupDisplay.style.display = "grid";
+  setTimeout(function () {
+    window.open("/index.html", "_self");
+  }, 6000);
+}
+
 // UNUSED VATRIABLES, might want later
 // var playerPokemonMHealth = document.getElementById("plyr_max_health");
 // var cpuPokemonMHealth = document.getElementById("cpu_max_health");

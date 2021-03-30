@@ -74,10 +74,11 @@ function cpuAttack() {
     // if player health is instead less than or = to upcoming ability damage, set player health variable to 0.
   } else if (playerHealth <= cpuAbilityChoice.damage) {
     playerHealth = 0;
-    // update health value.
+
+    gameOver = true;
     playerPokemonHealth.innerHTML = `${playerHealth}`;
     // this stops the game as gameOver = false, needs to be true to run.
-    gameOver = true;
+
     // update action section for attack and faint.
     message.innerText = `Enemy ${cpuPokemon.name}'s ${cpuAbilityChoice.name} did ${cpuAbilityChoice.damage} damage to your ${currentPokemon.name}. \n Your ${currentPokemon.name} has fainted`;
   }
@@ -114,13 +115,28 @@ function playerAttack(playerAbility) {
   Cookies.set("cpuCurrentHealth", cpuHealth);
 }
 
+// function redirect() {
+//   var playerSelection = getPokemonObject();
+
+// }
+
+// Clear Cookies if game is over
+function clearCookie() {
+  if (gameOver === true) {
+    Cookies.remove("plyrCurrentHealth");
+    Cookies.remove("cpuCurrentHealth");
+  }
+  // redirect();
+}
+
 // Function to start a game. setTimeout to 4 seconds so that there's a delay between the Player, and cpu attacks, this alsodelays the message that
 // we display to the user, for a better user experience.
 function playGame(playerAbility) {
-  if (!gameOver) {
+  if (gameOver === false) {
     playerAttack(playerAbility);
     setTimeout(function () {
       cpuAttack();
-    }, 4000);
+    }, 1000);
   }
+  clearCookie();
 }
