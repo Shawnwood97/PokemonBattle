@@ -38,8 +38,8 @@ body {
 .main_grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(40%, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+  -ms-grid-columns: (minmax(50%, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
   place-items: center;
   width: 98vw;
   height: 70vh;
@@ -120,13 +120,15 @@ body {
 #player_health,
 #cpu_health {
   position: relative;
-  width: 100%;
-  border: 1px solid black;
+  width: 250px;
+  border: 1px solid #000;
+  border-radius: 10px;
   height: 20px;
 }
 
 #plyr_current_health,
 #cpu_current_health {
+  border-radius: 10px;
   width: 100%;
   position: absolute;
   height: 100%;
@@ -203,5 +205,18 @@ body {
       -ms-grid-row-align: start;
       align-self: start;
   font-size: 12px;
+}
+
+#cpu_name,
+#player_name {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.name_health_wrap {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid #383838;
+  border-radius: 5px;
+  padding: 10px;
 }
 /*# sourceMappingURL=style.css.map */

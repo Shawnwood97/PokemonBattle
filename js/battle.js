@@ -3,6 +3,7 @@ var playerSelection = Cookies.get("chosenPokemon");
 var playerHealth = Cookies.get("plyrCurrentHealth");
 var cpuSelection = Cookies.get("cpuChosenPokemon");
 var cpuHealth = Cookies.get("cpuCurrentHealth");
+var gameOver = Boolean(Cookies.get("gameOver"));
 
 // Dynamically sets the title of the page based on the pokwemon names stored in the cookies.
 document.title = `${playerSelection} Vs. ${cpuSelection}`;
@@ -23,7 +24,7 @@ var currentPokemon = pokemonList[playerSelection.toLowerCase()];
 var cpuCurrentPokemon = cpuPokemonList[cpuSelection.toLowerCase()];
 
 // variable for ending the game. gameOver = false; means that the game is still going..... thinkkk about it :).
-var gameOver = false;
+// var gameOver = false;
 
 // Injects html Dynamically based on cookies and above variables. This is why we needed variables with lowercase values.
 playerPokemonName.innerHTML = `${currentPokemon.name}`;

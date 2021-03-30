@@ -16,6 +16,7 @@ function getCpuPokemonObject() {
 function createGame(pokemonName, cpuPokemonName) {
   Cookies.set("chosenPokemon", pokemonName);
   Cookies.set("cpuChosenPokemon", cpuPokemonName);
+  Cookies.set("gameOver", "");
 
   var currentPokemon = getPokemonObject();
   var cpuPokemon = getCpuPokemonObject();
@@ -75,7 +76,7 @@ function cpuAttack() {
   } else if (playerHealth <= cpuAbilityChoice.damage) {
     playerHealth = 0;
 
-    gameOver = true;
+    gameOver = Cookies.set("gameOver", "Player Wins!");
     playerPokemonHealth.innerHTML = `${playerHealth}`;
     // this stops the game as gameOver = false, needs to be true to run.
 
@@ -98,17 +99,17 @@ function playerAttack(playerAbility) {
   // sets variable to be the ability chosen, using the argument from above and onclick from the button.
   var chosenAbility = currentPokemon.abilities[playerAbility];
   // set's variable to CPU health cookie
-  var cpuHealth = Cookies.get("cpuCurrentHealth");
+  // var cpuHealth = Cookies.get("cpuCurrentHealth");
 
   // same logic as above, but for the user attack.
   if (cpuHealth > chosenAbility.damage) {
     cpuHealth -= chosenAbility.damage;
     cpuPokemonHealth.innerHTML = `${cpuHealth}`;
     message.innerText = `${currentPokemon.name}'s ${chosenAbility.name} did ${chosenAbility.damage} damage to ${cpuPokemon.name}`;
-  } else if (cpuHealth <= chosenAbility.damage) {
+  } else if (cpuHealth <= chosenAbility.damage && gameOver === false) {
     cpuHealth = 0;
     cpuPokemonHealth.innerHTML = `${cpuHealth}`;
-    gameOver = true;
+    gameOver = Cookies.set("gameOver", "Player Wins!");
     message.innerText = `${currentPokemon.name}'s ${chosenAbility.name} did ${chosenAbility.damage} damage to ${cpuPokemon.name}. \n ${cpuPokemon.name} has fainted`;
   }
   cpuHealthBar(cpuHealth, cpuPokemon.max_health);
@@ -138,5 +139,4 @@ function playGame(playerAbility) {
       cpuAttack();
     }, 1000);
   }
-  clearCookie();
 }
