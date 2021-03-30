@@ -1,3 +1,5 @@
+// Object for users pokemon
+
 var pokemonList = {
   charmander: {
     name: "Charmander",
@@ -76,6 +78,7 @@ var pokemonList = {
   },
 };
 
+// Opject for CPU's pokemon
 var cpuPokemonList = {
   charmander: {
     name: "Charmander",
