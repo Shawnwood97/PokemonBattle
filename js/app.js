@@ -1,7 +1,7 @@
 // declares a variable for the main section to create all our html in.
 var pokemonOptions = document.getElementById("pokemon_options");
 
-// declaring an undefined variable here and updating it with finctions, makes cpuPokemonSelection available to the global scope.
+// declaring an undefined variable here and updating it with functions, makes cpuPokemonSelection available to the global scope.
 var cpuPokemonSelection;
 
 // Storing length(number of direct children keys (which are also objects)) of cpuPokemonList in in pokemon.js

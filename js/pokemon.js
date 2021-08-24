@@ -15,7 +15,7 @@ var pokemonList = {
         damage: 100,
       },
       ability2: {
-        name: "Smokey",
+        name: "Flare",
         type: "fire",
         damage: 300,
       },
@@ -35,19 +35,19 @@ var pokemonList = {
     weakness: "grass",
     abilities: {
       ability1: {
-        name: "Water gun",
-        type: "water",
-        damage: 200,
-      },
-      ability2: {
-        name: "Water pulse",
+        name: "Water Gun",
         type: "water",
         damage: 100,
+      },
+      ability2: {
+        name: "Water Pulse",
+        type: "water",
+        damage: 200,
       },
       ability3: {
         name: "Surf",
         type: "water",
-        damage: 650,
+        damage: 450,
       },
     },
   },
@@ -60,19 +60,19 @@ var pokemonList = {
     weakness: "fire",
     abilities: {
       ability1: {
-        name: "Grass1",
+        name: "Razor Leaf",
         type: "grass",
-        damage: 220,
+        damage: 120,
       },
       ability2: {
         name: "Vine Whip",
         type: "grass",
-        damage: 110,
+        damage: 220,
       },
       ability3: {
-        name: "Grass3",
+        name: "Solar Beam",
         type: "grass",
-        damage: 620,
+        damage: 520,
       },
     },
   },
@@ -94,7 +94,7 @@ var cpuPokemonList = {
         damage: 100,
       },
       ability2: {
-        name: "Smokey",
+        name: "Flare",
         type: "fire",
         damage: 300,
       },
@@ -114,19 +114,19 @@ var cpuPokemonList = {
     weakness: "grass",
     abilities: {
       ability1: {
-        name: "Water gun",
-        type: "water",
-        damage: 200,
-      },
-      ability2: {
-        name: "Water pulse",
+        name: "Water Gun",
         type: "water",
         damage: 100,
+      },
+      ability2: {
+        name: "Water Pulse",
+        type: "water",
+        damage: 200,
       },
       ability3: {
         name: "Surf",
         type: "water",
-        damage: 650,
+        damage: 450,
       },
     },
   },
@@ -139,19 +139,19 @@ var cpuPokemonList = {
     weakness: "fire",
     abilities: {
       ability1: {
-        name: "Grass1",
+        name: "Razor Leaf",
         type: "grass",
-        damage: 220,
+        damage: 120,
       },
       ability2: {
         name: "Vine Whip",
         type: "grass",
-        damage: 110,
+        damage: 220,
       },
       ability3: {
-        name: "Grass3",
+        name: "Solar Beam",
         type: "grass",
-        damage: 620,
+        damage: 520,
       },
     },
   },

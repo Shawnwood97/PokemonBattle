@@ -142,6 +142,8 @@ body {
   display: -ms-grid;
   display: grid;
   grid-auto-flow: column;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
   margin: 10px;
 }
 
@@ -160,11 +162,13 @@ body {
   height: 50px;
   background: #fff;
   border-radius: 10px;
+  border: none;
+  font-weight: bold;
 }
 
 .attacks:hover {
   cursor: pointer;
-  background: #98909b;
+  background: #dddddd;
 }
 
 #pop_up {
@@ -180,8 +184,8 @@ body {
 
 #text_container {
   background: rgba(216, 216, 216, 0.8);
-  height: 400px;
-  width: 700px;
+  height: 200px;
+  width: 300px;
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;

@@ -59,17 +59,18 @@
 
     <article class="attacks_messages">
       <div id="attack_container">
-        <div id="attack_one" class="attacks" onclick="playGame('ability1')">Ability 1</div>
-        <div id="attack_two" class="attacks" onclick="playGame('ability2')">Ability 2</div>
-        <div id="attack_three" class="attacks" onclick="playGame('ability3')">Ability 3</div>
+        <button id="attack_one" class="attacks" onclick="playGame('ability1')">Ability 1</button>
+        <button id="attack_two" class="attacks" onclick="playGame('ability2')">Ability 2</button>
+        <button id="attack_three" class="attacks" onclick="playGame('ability3')">Ability 3</button>
         <!-- <div id="attack_four" class="attacks"></div> -->
       </div>
       <div id="messages_container"></div>
     </article>
     <div id="pop_up">
+
       <div id="text_container">
-        <p id="game_text"></p>
-        <p class="redirect_text"></p>
+        <div id="winner_text"></div>
+        <p class="redirect_text">Redirecting you to the home screen!</p>
       </div>
     </div>
   </main>

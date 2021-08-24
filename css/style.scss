@@ -143,6 +143,7 @@ body {
 .attacks_messages {
   display: grid;
   grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr;
   margin: 10px;
 }
 
@@ -158,10 +159,12 @@ body {
   height: 50px;
   background: #fff;
   border-radius: 10px;
+  border: none;
+  font-weight: bold;
 
   &:hover {
     cursor: pointer;
-    background: #98909b
+    background: #dddddd
   }
 }
 
@@ -179,8 +182,8 @@ body {
 
 #text_container {
   background: rgba($color: #d8d8d8, $alpha: .8);
-  height: 400px;
-  width: 700px;
+  height: 200px;
+  width: 300px;
   display: grid;
   align-items: center;
   padding: 20px;

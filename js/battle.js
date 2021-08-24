@@ -12,6 +12,9 @@ document.title = `${playerSelection} Vs. ${cpuSelection}`;
 var playerPokemonImg = document.getElementById("player_image");
 var playerPokemonName = document.getElementById("player_name");
 var playerPokemonHealth = document.getElementById("plyr_current_health");
+var playerPokemonAttackOne = document.getElementById("attack_one");
+var playerPokemonAttackTwo = document.getElementById("attack_two");
+var playerPokemonAttackThree = document.getElementById("attack_three");
 
 // stores element creation methods for the cpu in variables.
 var cpuPokemonImg = document.getElementById("cpu_image");
@@ -31,6 +34,11 @@ playerPokemonName.innerHTML = `${currentPokemon.name}`;
 playerPokemonImg.innerHTML = `<img src='${currentPokemon.image}'>`;
 playerPokemonHealth.innerHTML = `${playerHealth}`;
 
+// adds names of abilities from currentPokemon to the divs with the ID's from above.
+playerPokemonAttackOne.innerText = `${currentPokemon["abilities"]["ability1"].name}`;
+playerPokemonAttackTwo.innerText = `${currentPokemon["abilities"]["ability2"].name}`;
+playerPokemonAttackThree.innerText = `${currentPokemon["abilities"]["ability3"].name}`;
+
 cpuPokemonName.innerHTML = `${cpuCurrentPokemon.name}`;
 cpuPokemonImg.innerHTML = `<img src='${cpuCurrentPokemon.image}'>`;
 cpuPokemonHealth.innerHTML = `${cpuHealth}`;
@@ -38,18 +46,6 @@ cpuPokemonHealth.innerHTML = `${cpuHealth}`;
 // This ensures the health bar updates when the page is loaded, rather than just on click. Otherwise on refresh and game start, health bars would not show full health visually.
 playerHealthBar(playerHealth, currentPokemon.max_health);
 cpuHealthBar(cpuHealth, cpuCurrentPokemon.max_health);
-
-if (
-  playerSelection === undefined ||
-  playerHealth === undefined ||
-  cpuHealth === undefined
-) {
-  var popupDisplay = document.getElementById("pop_up");
-  popupDisplay.style.display = "grid";
-  setTimeout(function () {
-    window.open("/index.html", "_self");
-  }, 6000);
-}
 
 // UNUSED VATRIABLES, might want later
 // var playerPokemonMHealth = document.getElementById("plyr_max_health");
